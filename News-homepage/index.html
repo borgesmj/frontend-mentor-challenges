@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News-homepage</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./Images/favicon-32x32.png" type="image/x-icon">
+  </head>
+  <body>
+    <nav>
+      <img src="./Images/logo.svg" alt="">
+      <input type="checkbox" id="navcheck" class="hidden" />
+      <label for="navcheck" class="navLabel">
+        <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+            <path d="M0 0h40v3H0z" />
+          </g>
+        </svg>
+      </label>
+      <section class="nav-container">
+        <div>
+          <label for="navcheck" class="navLabel">
+            <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#00001A" fill-rule="evenodd">
+                <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+                <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+              </g>
+            </svg>
+          </label>
+          <ul class="unlisted">
+            <li>Home</li>
+            <li>New</li>
+            <li>Popular</li>
+            <li>Trending</li>
+            <li>Categories</li>
+          </ul>
+        </div>
+      </section>
+    </nav>
+    <main>
+      <section>
+        <div class="principal-news">
+          <img
+            src="./Images/image-web-3-mobile.jpg"
+            alt="image-web-3-mobile"
+            class="mobile-img"
+          />
+          <img
+            src="./Images/image-web-3-desktop.jpg"
+            alt="image-web-3-desktop"
+            class="desktop-img"
+          />
+          <div>
+            <h2>The Bright Future of Web 3.0?</h2>
+          <div>
+            <p>
+              We drive into the next evolution of the web that claims to put the
+              power of the platforms back into the hands of the people. But is it
+              really fulfilling its promise?
+            </p>
+            <a href="#">REad more</a>
+          </div>
+          </div>
+        </div>
+      </section>
+      <section class="news-list">
+        <h2>New</h2>
+        <div class="border-bottom single-new">
+          <h3 class="news-title">Hydrogen Vs Electric Cars</h3>
+          <p class="news-content">
+            Will Hydrogen-fueled cars ever catch up to EVs?
+          </p>
+        </div>
+        <div class="border-bottom single-new">
+          <h3 class="news-title">The Downsides of AI artistry</h3>
+          <p class="news-content">
+            What are the possible adverse effects of on-demand AI image
+            generator
+          </p>
+        </div>
+        <div class="single-new">
+          <h3 class="news-title">Is VC Funding Drying Up?</h3>
+          <p class="news-content">
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means
+          </p>
+        </div>
+      </section>
+      <section class="topics">
+        <div class="topic">
+          <img src="./Images/image-retro-pcs.jpg" alt="image-retro-pcs" />
+          <div>
+            <h2>01</h3>
+            <h3> Reviving Retro PCs</h3>
+            <p>What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+        <div class="topic">
+          <img src="./Images/image-top-laptops.jpg" alt="image-top-laptops" />
+          <div>
+            <h2>02</h3>
+            <h3> Tops 10 Laptops of 2022</h3>
+            <p>Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class="topic">
+          <img src="./Images/image-gaming-growth.jpg" alt="image-gaming-growth" />
+          <div>
+            <h2>03</h3>
+            <h3>The Grow of Gaming</h3>
+            <p>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
