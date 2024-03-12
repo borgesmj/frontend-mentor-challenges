@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import Comment from "./Components/Comment";
+import { initialComments } from "./InitialComments";
+import Form from "./Components/Form";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [comments, setComments] = useState([]);
+  const [activeUser, setActiveUser] = useState({})
+
+  useEffect(() => {
+    const obtenerLS = JSON.parse(localStorage.getItem("comments"));
+    const obtenerUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (obtenerLS) {
+      setComments(obtenerLS);
+    } else {
+      localStorage.setItem(
+        "comments",
+        JSON.stringify(initialComments.comments)
+      );
+    }
+
+    if (obtenerUser){
+      setActiveUser(obtenerUser)
+    } else {
+      localStorage.setItem(
+        'currentUser',
+        JSON.stringify(initialComments.currentUser)
+      )
+    }
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main className="bg-[#f5f6fa] w-dvw p-4">
+      {comments.map((item, index) => (
+        <Comment
+          key={`comment_${index}`}
+          content={item.content}
+          profilePic={item.user.image.webp}
+          username={item.user.username}
+          score = {item.score}
+          createdAt = {item.createdAt}
+          replies = {item.replies}
+          activeUser = {activeUser.username}
+        />
+      ))}
+      <Form activeUser = {activeUser}/>
+    </main>
+  );
 }
 
-export default App
+export default App;
