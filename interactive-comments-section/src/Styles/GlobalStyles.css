@@ -33,6 +33,10 @@ body{
     font-weight: 700;
 }
 
-.background-Very-light-gray{
+.bg-Very-light-gray{
         background-color: var(--Very-light-gray);
+}
+
+.bg-color-white{
+    background-color: var(--White);
 }
