@@ -3,7 +3,7 @@ import React from "react";
 const Comment = ({ activeUser }) => {
   return (
     <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
-      <div className={`${!activeUser ? 'w-4/5' : 'w-full'} flex flex-row justify-between items-center mb-2`}>
+      <div className={`${!activeUser ? 'w-4/5 lg:w-2/5' : 'w-full lg:w-3/5'} flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}>
         <img
           src="./images/avatars/image-juliusomo.webp"
           alt="profile_user_image"
@@ -17,23 +17,23 @@ const Comment = ({ activeUser }) => {
         </span>
         <span className="txt-Grayish-Blue">2 days ago</span>
       </div>
-      <p className="my-2 txt-Grayish-Blue">
+      <p className="my-2 txt-Grayish-Blue lg:ml-[50px]">
         Impressive! Though it seems the drag feature could be improved. But
         overall it looks incredible. You've nailed the design and the
         responsiveness at various breakpoints works really well.
       </p>
-      <div className="bg-Very-light-gray p-[5px] w-[30%] txt-Moderate-blue font-bold flex flex-row justify-between rounded-[8px] text-[18px]">
-        <button className="w-1/4">+</button>
+      <div className="bg-Very-light-gray p-[5px] w-[30%] txt-Moderate-blue font-bold flex flex-row justify-between rounded-[8px] text-[18px] lg:flex-col lg:w-[40px] lg:absolute lg:justify-center">
+        <button className="w-1/4 lg:text-center lg:w-full">+</button>
         <input
           type="text"
           name=""
           id=""
           value={12}
-          className="w-1/4 bg-transparent"
+          className="w-1/4 bg-transparent lg:text-center lg:w-full"
         />
-        <button className="w-1/4">-</button>
+        <button className="w-1/4 lg:text-center lg:w-full">-</button>
       </div>
-      <div className=" absolute bottom-[20px] right-[20px]">
+      <div className=" absolute bottom-[20px] right-[20px] lg:top-[25px]">
         {!activeUser ? (
           <div className="flex flex-row justify-between items-center w-[70px]">
             <img src="/images/icon-reply.svg" alt="" />
