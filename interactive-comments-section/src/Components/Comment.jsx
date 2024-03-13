@@ -23,13 +23,12 @@ const Comment = ({
     } else {
       setCommentScore(commentScore - 1);
     }
-};
-
+  };
 
   const handleVote = (e) => {
-    e.preventDefault()
-    setCommentScore(commentScore + 1)
-  }
+    e.preventDefault();
+    setCommentScore(commentScore + 1);
+  };
   return (
     <>
       <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
@@ -57,7 +56,12 @@ const Comment = ({
         </div>
         <p className="my-2 txt-Grayish-Blue lg:ml-[50px]">{content}</p>
         <div className="bg-Very-light-gray p-[5px] w-[30%] txt-Moderate-blue font-bold flex flex-row justify-between rounded-[8px] text-[18px] lg:flex-col lg:w-[40px] lg:absolute lg:justify-center">
-          <button className="w-1/4 lg:text-center lg:w-full" onClick={handleVote}>+</button>
+          <button
+            className="w-1/4 lg:text-center lg:w-full"
+            onClick={handleVote}
+          >
+            +
+          </button>
           <input
             type="text"
             name=""
@@ -66,7 +70,12 @@ const Comment = ({
             className="w-1/4 bg-transparent lg:text-center lg:w-full outline-none"
             readOnly
           />
-          <button className="w-1/4 lg:text-center lg:w-full" onClick={handleUnVote}>-</button>
+          <button
+            className="w-1/4 lg:text-center lg:w-full"
+            onClick={handleUnVote}
+          >
+            -
+          </button>
         </div>
         <div className=" absolute bottom-[20px] right-[20px] lg:top-[25px]">
           {!activeUser() ? (
