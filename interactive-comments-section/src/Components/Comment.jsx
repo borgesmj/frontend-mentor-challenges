@@ -1,51 +1,58 @@
 import React from "react";
 import Replies from "./Replies";
 
-const Comment = ({ activeUser }) => {
+const Comment = ({
+  currentUser,
+  content,
+  profilePic,
+  userName,
+  createdAt,
+  replies,
+  score
+}) => {
+  const activeUser = () => {
+    if (currentUser === userName) return true;
+  };
   return (
     <>
       <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
         <div
           className={`${
-            !activeUser ? "w-4/5 lg:w-[30%]" : "w-full lg:w-2/5"
+            activeUser ? "w-4/5 lg:w-[30%]" : "w-full lg:w-2/5"
           } flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}
         >
           <img
-            src="./images/avatars/image-juliusomo.webp"
+            src={profilePic}
             alt="profile_user_image"
             className="w-10 h-auto"
           />
           <a href="#" className="font-bold">
-            juliusomo
+            {userName}
           </a>
           <span
             className={`bg-Moderate-blue py-[2px] px-[6px] text-[14px] font-bold text-white rounded ${
-              !activeUser ? "hidden" : null
+              activeUser ? "hidden" : null
             }`}
           >
             you
           </span>
-          <span className="txt-Grayish-Blue">2 days ago</span>
+          <span className="txt-Grayish-Blue">{createdAt}</span>
         </div>
-        <p className="my-2 txt-Grayish-Blue lg:ml-[50px]">
-          Impressive! Though it seems the drag feature could be improved. But
-          overall it looks incredible. You've nailed the design and the
-          responsiveness at various breakpoints works really well.
-        </p>
+        <p className="my-2 txt-Grayish-Blue lg:ml-[50px]">{content}</p>
         <div className="bg-Very-light-gray p-[5px] w-[30%] txt-Moderate-blue font-bold flex flex-row justify-between rounded-[8px] text-[18px] lg:flex-col lg:w-[40px] lg:absolute lg:justify-center">
           <button className="w-1/4 lg:text-center lg:w-full">+</button>
           <input
             type="text"
             name=""
             id=""
-            value={12}
+            value={score}
             className="w-1/4 bg-transparent lg:text-center lg:w-full outline-none"
             readOnly
           />
           <button className="w-1/4 lg:text-center lg:w-full">-</button>
         </div>
         <div className=" absolute bottom-[20px] right-[20px] lg:top-[25px]">
-          {!activeUser ? (
+          {activeUser ? (
             <div className="flex flex-row justify-between items-center w-[70px]">
               <img src="/images/icon-reply.svg" alt="" />
               <span className="txt-Moderate-blue font-bold">Reply</span>
@@ -64,7 +71,12 @@ const Comment = ({ activeUser }) => {
           )}
         </div>
       </div>
-      <Replies />
+      {replies.length > 0 && (
+        <Replies
+          replies={replies}
+          currentUser={currentUser}
+        />
+      )}
     </>
   );
 };
