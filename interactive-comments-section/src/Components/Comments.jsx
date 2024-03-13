@@ -5,7 +5,8 @@ import Comment from './Comment'
 const Comments = () => {
   return (
     <section>
-      <Comment/>
+      <Comment activeUser={true}/>
+      <Comment activeUser={false}/>
     </section>
   )
 }

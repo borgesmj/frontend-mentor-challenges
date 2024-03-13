@@ -53,3 +53,7 @@ body{
 .txt-Moderate-blue{
     color: var(--Moderate-blue);
 }
+
+.txt-Soft-Red{
+    color: var(--Soft-Red);
+}
