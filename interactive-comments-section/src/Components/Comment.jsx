@@ -39,7 +39,7 @@ const Comment = ({ activeUser }) => {
             name=""
             id=""
             value={12}
-            className="w-1/4 bg-transparent lg:text-center lg:w-full"
+            className="w-1/4 bg-transparent lg:text-center lg:w-full outline-none"
             readOnly
           />
           <button className="w-1/4 lg:text-center lg:w-full">-</button>
