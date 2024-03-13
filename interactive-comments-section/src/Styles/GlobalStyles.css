@@ -57,3 +57,7 @@ body{
 .txt-Soft-Red{
     color: var(--Soft-Red);
 }
+
+.border-Light-gray{
+    border-color: var(--Light-gray);
+}
