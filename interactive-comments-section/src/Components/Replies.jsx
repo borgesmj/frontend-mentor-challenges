@@ -1,10 +1,11 @@
 import React from 'react'
-import Comment from './Comment'
+import Reply from './Reply'
 
 const Replies = () => {
   return (
-    <div className='border-l-solid border-l-[2px] border-black'>
-      <Comment/>
+    <div className='border-l-solid border-l-[2px] border-black pl-10 ml-3'>
+      <Reply activeUser={false}/>
+      <Reply activeUser={false}/>
     </div>
   )
 }
