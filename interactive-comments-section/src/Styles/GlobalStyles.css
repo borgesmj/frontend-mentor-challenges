@@ -40,3 +40,16 @@ body{
 .bg-color-white{
     background-color: var(--White);
 }
+
+.bg-Moderate-blue{
+    background-color: var(--Moderate-blue);
+}
+
+.txt-Grayish-Blue{
+    color: var(--Grayish-Blue)
+}
+
+
+.txt-Moderate-blue{
+    color: var(--Moderate-blue);
+}
