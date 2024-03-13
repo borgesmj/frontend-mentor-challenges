@@ -1,10 +1,9 @@
 import React from "react";
 
-const Comment = () => {
-  const asctiveUser = true;
+const Comment = ({ activeUser }) => {
   return (
     <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
-      <div className="w-full flex flex-row justify-between items-center mb-2">
+      <div className={`${!activeUser ? 'w-4/5' : 'w-full'} flex flex-row justify-between items-center mb-2`}>
         <img
           src="./images/avatars/image-juliusomo.webp"
           alt="profile_user_image"
@@ -13,7 +12,7 @@ const Comment = () => {
         <a href="#" className="font-bold">
           juliusomo
         </a>
-        <span className="bg-Moderate-blue py-[2px] px-[6px] text-[14px] font-bold text-white rounded">
+        <span className={`bg-Moderate-blue py-[2px] px-[6px] text-[14px] font-bold text-white rounded ${!activeUser ? "hidden" : null}`}>
           you
         </span>
         <span className="txt-Grayish-Blue">2 days ago</span>
@@ -35,20 +34,23 @@ const Comment = () => {
         <button className="w-1/4">-</button>
       </div>
       <div className=" absolute bottom-[20px] right-[20px]">
-        {/* <div className="flex flex-row justify-between items-center w-[70px]">
-          <img src="/images/icon-reply.svg" alt="" />
-          <span className="txt-Moderate-blue font-bold">Reply</span>
-        </div> */}
-        <div className="flex flex-row justify-between items-center w-[140px]">
+        {!activeUser ? (
+          <div className="flex flex-row justify-between items-center w-[70px]">
+            <img src="/images/icon-reply.svg" alt="" />
+            <span className="txt-Moderate-blue font-bold">Reply</span>
+          </div>
+        ) : (
+          <div className="flex flex-row justify-between items-center w-[140px]">
             <div className="flex flex-row justify-around w-1/2 items-center mx-2">
-                <img src="/images/icon-delete.svg" alt="" />
-                <span className="font-bold txt-Soft-Red">Delete</span>
+              <img src="/images/icon-delete.svg" alt="" />
+              <span className="font-bold txt-Soft-Red">Delete</span>
             </div>
             <div className="flex flex-row justify-around w-1/2 items-center mx-2">
-                <img src="/images/icon-edit.svg" alt="" />
-                <span className="font-bold txt-Moderate-blue">Edit</span>
+              <img src="/images/icon-edit.svg" alt="" />
+              <span className="font-bold txt-Moderate-blue">Edit</span>
             </div>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
