@@ -3,7 +3,7 @@ import React from "react";
 const Comment = ({ activeUser }) => {
   return (
     <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
-      <div className={`${!activeUser ? 'w-4/5 lg:w-2/5' : 'w-full lg:w-3/5'} flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}>
+      <div className={`${!activeUser ? 'w-4/5 lg:w-[30%]' : 'w-full lg:w-2/5'} flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}>
         <img
           src="./images/avatars/image-juliusomo.webp"
           alt="profile_user_image"
