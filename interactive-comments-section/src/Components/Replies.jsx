@@ -11,6 +11,9 @@ const Replies = ({ replies, currentUser }) => {
           key={`reply_${index}`}
           userName={item.user.username}
           currentUser={currentUser}
+          content = {item.content}
+          score = {item.score}
+          createdAt = {item.createdAt}
         />
       ))}
     </div>
