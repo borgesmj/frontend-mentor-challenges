@@ -30,6 +30,7 @@ const Reply = ({activeUser}) => {
           id=""
           value={12}
           className="w-1/4 bg-transparent lg:text-center lg:w-full"
+          readOnly
         />
         <button className="w-1/4 lg:text-center lg:w-full">-</button>
       </div>
