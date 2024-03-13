@@ -11,7 +11,7 @@ const Comment = ({
   score
 }) => {
   const activeUser = () => {
-    if (currentUser === userName) return true;
+    return currentUser === userName;
   };
   return (
     <>
@@ -31,7 +31,7 @@ const Comment = ({
           </a>
           <span
             className={`bg-Moderate-blue py-[2px] px-[6px] text-[14px] font-bold text-white rounded ${
-              activeUser ? "hidden" : null
+              !activeUser() ? "hidden" : null
             }`}
           >
             you
@@ -52,7 +52,7 @@ const Comment = ({
           <button className="w-1/4 lg:text-center lg:w-full">-</button>
         </div>
         <div className=" absolute bottom-[20px] right-[20px] lg:top-[25px]">
-          {activeUser ? (
+          {!activeUser() ? (
             <div className="flex flex-row justify-between items-center w-[70px]">
               <img src="/images/icon-reply.svg" alt="" />
               <span className="txt-Moderate-blue font-bold">Reply</span>

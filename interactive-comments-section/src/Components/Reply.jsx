@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Reply = ({activeUser}) => {
+const Reply = ({userName, currentUser}) => {
+
+  const activeUser = () => {
+    if (userName === currentUser)
+    return true
+  }
   return (
     <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
       <div className={`${!activeUser ? 'w-4/5 lg:w-[30%]' : 'w-full lg:w-2/5'} flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}>
@@ -10,7 +15,7 @@ const Reply = ({activeUser}) => {
           className="w-10 h-auto"
         />
         <a href="#" className="font-bold">
-          juliusomo
+          {userName}
         </a>
         <span className={`bg-Moderate-blue py-[2px] px-[6px] text-[14px] font-bold text-white rounded ${!activeUser ? "hidden" : null}`}>
           you
