@@ -97,7 +97,7 @@ const Comment = ({
           )}
         </div>
       </div>
-      {replies.length > 0 && (
+      {replies?.length > 0 && (
         <Replies replies={replies} currentUser={currentUser} />
       )}
     </>

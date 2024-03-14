@@ -9,10 +9,10 @@ const Comments = ({ currentUser, usersComments }) => {
         <Comment
           key={`comment_${index}`}
           content={item.content}
-          profilePic={item.user.image.webp}
-          userName = {item.user.username}
+          profilePic={item.user?.image?.webp}
+          userName = {item.user?.username}
           createdAt = {item.createdAt}
-          replies = {item.replies}
+          replies = {item?.replies}
           currentUser = {currentUser}
           score = {item.score}
         />
