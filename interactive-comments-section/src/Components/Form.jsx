@@ -20,9 +20,9 @@ const Form = ({
   const handleNewComment = (e) => {
     e.preventDefault()
     const newComment = {
-        id: getId(),
+        id: 5,
         "content": commentText,
-        "createAt": getDate(),
+        "createAt": "now",
         "score": 0,
         "user": {
             "image": {
