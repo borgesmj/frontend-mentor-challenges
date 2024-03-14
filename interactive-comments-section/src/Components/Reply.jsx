@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Reply = ({userName, currentUser, content, score, createdAt}) => {
+const Reply = ({userName, currentUser, content, score, createdAt, profilePic}) => {
 
   const activeUser = () => {
     if (userName === currentUser)
@@ -10,7 +10,7 @@ const Reply = ({userName, currentUser, content, score, createdAt}) => {
     <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
       <div className={`${!activeUser() ? 'w-4/5 lg:w-[30%]' : 'w-full lg:w-2/5'} flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}>
         <img
-          src="./images/avatars/image-juliusomo.webp"
+          src={profilePic}
           alt="profile_user_image"
           className="w-10 h-auto"
         />

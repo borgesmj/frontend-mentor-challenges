@@ -14,6 +14,7 @@ const Replies = ({ replies, currentUser }) => {
           content = {item.content}
           score = {item.score}
           createdAt = {item.createdAt}
+          profilePic = {item.user.image.webp}
         />
       ))}
     </div>
