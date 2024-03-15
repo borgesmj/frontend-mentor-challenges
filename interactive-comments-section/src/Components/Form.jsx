@@ -19,7 +19,8 @@ const Form = ({
     }
   const handleNewComment = (e) => {
     e.preventDefault()
-    const newComment = {
+    if (commentText.length > 0){
+      const newComment = {
         id: 5,
         "content": commentText,
         "createAt": "now",
@@ -36,6 +37,9 @@ const Form = ({
     console.log(newComment)
     createComment(newComment)
     setCommentText('')
+    } else {
+      return
+    }
   };
   return (
     <form
@@ -47,7 +51,7 @@ const Form = ({
         id=""
         cols="30"
         rows="3"
-        className="w-full rounded-[10px] px-6 py-4 border-solid border-[2px] border-Light-gray mb-6"
+        className="w-full rounded-[10px] px-6 py-4 border-solid border-[2px] border-Light-gray mb-6 lg:cursor-pointer"
         placeholder="Add a comment.."
         onChange={(e) => {setCommentText(e.target.value)}}
         value={(commentText)}
@@ -56,7 +60,7 @@ const Form = ({
       <input
         type="submit"
         value="SEND"
-        className="font-medium bg-[#5457b6] text-white py-4 px-8 rounded-[10px]"
+        className={`font-medium bg-[#5457b6] text-white py-4 px-8 rounded-[10px] ${commentText.length > 0 ? "lg:bg-[#5457b6] hover:cursor-pointer lg:shadow-xl" : 'lg:bg-[#c3c4ef] hover:cursor-not-allowed'}`}
       />
     </form>
   );
