@@ -21,9 +21,9 @@ const Form = ({
     e.preventDefault()
     if (commentText.length > 0){
       const newComment = {
-        id: 5,
+        id: getId(),
         "content": commentText,
-        "createAt": "now",
+        "createAt": getDate(),
         "score": 0,
         "user": {
             "image": {

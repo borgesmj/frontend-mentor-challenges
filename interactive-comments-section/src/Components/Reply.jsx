@@ -71,17 +71,17 @@ const Reply = ({
       </div>
       <div className=" absolute bottom-[20px] right-[20px] lg:top-[25px]">
         {!activeUser() ? (
-          <div className="flex flex-row justify-between items-center w-[70px]">
+          <div className="flex flex-row justify-between items-center w-[70px] lg:hover:cursor-pointer">
             <img src="/images/icon-reply.svg" alt="" />
             <span className="txt-Moderate-blue font-bold">Reply</span>
           </div>
         ) : (
           <div className="flex flex-row justify-between items-center w-[140px]">
-            <div className="flex flex-row justify-around w-1/2 items-center mx-2">
+            <div className="flex flex-row justify-around w-1/2 items-center mx-2 lg:hover:cursor-pointer">
               <img src="/images/icon-delete.svg" alt="" />
               <span className="font-bold txt-Soft-Red">Delete</span>
             </div>
-            <div className="flex flex-row justify-around w-1/2 items-center mx-2">
+            <div className="flex flex-row justify-around w-1/2 items-center mx-2 lg:hover:cursor-pointer">
               <img src="/images/icon-edit.svg" alt="" />
               <span className="font-bold txt-Moderate-blue">Edit</span>
             </div>
