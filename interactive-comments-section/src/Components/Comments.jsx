@@ -2,7 +2,7 @@ import React from "react";
 import Comment from "./Comment";
 // Comments section
 
-const Comments = ({ currentUser, usersComments }) => {
+const Comments = ({ currentUser, usersComments, openModal }) => {
   return (
     <section>
       {usersComments.map((item, index) => (
@@ -15,6 +15,7 @@ const Comments = ({ currentUser, usersComments }) => {
           replies = {item?.replies}
           currentUser = {currentUser}
           score = {item.score}
+          openModal = {openModal}
         />
       ))}
     </section>

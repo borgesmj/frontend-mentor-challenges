@@ -9,6 +9,7 @@ const Comment = ({
   createdAt,
   replies,
   score,
+  openModal
 }) => {
   const activeUser = () => {
     return currentUser === userName;
@@ -24,6 +25,10 @@ const Comment = ({
       setCommentScore(commentScore - 1);
     }
   };
+
+  const handleDelete = () => {
+    openModal()
+  }
 
   const handleVote = (e) => {
     e.preventDefault();
@@ -85,7 +90,7 @@ const Comment = ({
             </div>
           ) : (
             <div className="flex flex-row justify-between items-center w-[140px]">
-              <div className="flex flex-row justify-around w-1/2 items-center mx-2 lg:hover:cursor-pointer">
+              <div className="flex flex-row justify-around w-1/2 items-center mx-2 lg:hover:cursor-pointer" onClick={handleDelete}>
                 <img src="/images/icon-delete.svg" alt="" />
                 <span className="font-bold txt-Soft-Red">Delete</span>
               </div>

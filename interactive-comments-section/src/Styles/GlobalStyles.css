@@ -8,6 +8,7 @@
     /* Colores Neutr	#ffb8bbos */
     --Dark-blue: #324152;
     --Grayish-Blue: #67727e;
+    --Grayish-Blue-opacity: #67727e80;
     --Light-gray: #eaecf1;
     --Very-light-gray: #f5f6fa;
     --White: #ffffff;
@@ -60,4 +61,20 @@ body{
 
 .border-Light-gray{
     border-color: var(--Light-gray);
+}
+
+.bg-modal-transparent{
+    background-color: var(--Grayish-Blue-opacity);
+}
+
+.bg-color-soft-red{
+    background-color: var(--Soft-Red);
+}
+
+.bg-color-Grayish-Blue{
+    background-color: var(--Grayish-Blue);
+}
+
+.no-scroll{
+    overflow: hidden;
 }

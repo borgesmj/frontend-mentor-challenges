@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Comments from "./Components/Comments";
 import Form from "./Components/Form";
+import Modal from "./Components/Modal";
 
-const  App = () =>  {
+const App = () => {
   const [currentUser, setCurrentUser] = useState({});
   const [usersComments, setUserComments] = useState([]);
   const [newComment, setNewComment] = useState({});
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     const getComments = () => JSON.parse(localStorage.getItem("comments"));
@@ -24,8 +26,18 @@ const  App = () =>  {
 
   const createComment = (comment) => {
     setUserComments((prevComments) => [...prevComments, comment]);
-    localStorage.setItem('comments', JSON.stringify(usersComments))
+    localStorage.setItem("comments", JSON.stringify(usersComments));
   };
+
+  const openModal = () => {
+    setModal(true);
+    document.querySelector('body').classList.add('no-scroll');
+  }
+  
+  const closeModal = () => {
+    setModal(false);
+    document.querySelector('body').classList.remove('no-scroll');
+  }
 
   const fetchCommentsData = async () => {
     try {
@@ -50,10 +62,13 @@ const  App = () =>  {
   }, [currentUser]);
 
   return (
-    <main className="w-full py-8 px-4 md:w-3/4 md:my-0 md:mx-auto lg:w-1/2">
+    <main
+      className={`w-full py-8 px-4 md:w-3/4 md:my-0 md:mx-auto lg:w-1/2 &{modal ? "max-h-screen" : ""}`}
+    >
       <Comments
         currentUser={currentUser.username}
         usersComments={usersComments}
+        openModal = {openModal}
       />
       <Form
         profilePic={currentUser?.image?.webp}
@@ -62,8 +77,9 @@ const  App = () =>  {
         currentUser={currentUser}
         newComment={newComment}
       />
+      {modal && <Modal closeModal = {closeModal} />}
     </main>
   );
-}
+};
 
 export default App;
