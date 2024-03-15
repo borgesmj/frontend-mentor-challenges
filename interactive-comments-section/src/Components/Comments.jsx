@@ -16,6 +16,7 @@ const Comments = ({ currentUser, usersComments, openModal }) => {
           currentUser = {currentUser}
           score = {item.score}
           openModal = {openModal}
+          id = {item.id}
         />
       ))}
     </section>

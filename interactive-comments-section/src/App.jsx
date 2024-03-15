@@ -8,6 +8,7 @@ const App = () => {
   const [usersComments, setUserComments] = useState([]);
   const [newComment, setNewComment] = useState({});
   const [modal, setModal] = useState(false);
+  const [commentId, setCommetId] = useState('')
 
   useEffect(() => {
     const getComments = () => JSON.parse(localStorage.getItem("comments"));
@@ -29,7 +30,8 @@ const App = () => {
     localStorage.setItem("comments", JSON.stringify(usersComments));
   };
 
-  const openModal = () => {
+  const openModal = (id) => {
+    setCommetId(id)
     setModal(true);
     document.querySelector('body').classList.add('no-scroll');
   }
@@ -37,6 +39,14 @@ const App = () => {
   const closeModal = () => {
     setModal(false);
     document.querySelector('body').classList.remove('no-scroll');
+  }
+
+  const deleteComment = (id) => {
+    const filteredComments = usersComments.filter((item) => {
+      return item.id !== id
+    })
+    setUserComments(filteredComments)
+    closeModal()
   }
 
   const fetchCommentsData = async () => {
@@ -77,7 +87,7 @@ const App = () => {
         currentUser={currentUser}
         newComment={newComment}
       />
-      {modal && <Modal closeModal = {closeModal} />}
+      {modal && <Modal closeModal = {closeModal} deleteComment= {deleteComment} commentId = {commentId} />}
     </main>
   );
 };
