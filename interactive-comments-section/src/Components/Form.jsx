@@ -60,7 +60,7 @@ const Form = ({
       <input
         type="submit"
         value="SEND"
-        className={`font-medium bg-[#5457b6] text-white py-4 px-8 rounded-[10px] ${commentText.length > 0 ? "lg:bg-[#5457b6] hover:cursor-pointer lg:shadow-xl" : 'lg:bg-[#c3c4ef] hover:cursor-not-allowed'}`}
+        className={`font-medium bg-[#5457b6] text-white py-4 px-8 rounded-[10px] ${commentText.length > 0 ? "bg-[#5457b6] hover:cursor-pointer lg:shadow-xl" : 'bg-[#c3c4ef] hover:cursor-not-allowed'}`}
       />
     </form>
   );
