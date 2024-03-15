@@ -3,20 +3,17 @@ import Replies from "./Replies";
 
 const Comment = ({
   currentUser,
-  content,
-  profilePic,
-  userName,
-  createdAt,
-  replies,
-  score,
+  comment,
   openModal,
   id
 }) => {
   const activeUser = () => {
-    return currentUser === userName;
+    return currentUser === comment.user.username;
   };
 
-  const [commentScore, setCommentScore] = useState(score);
+  const [commentScore, setCommentScore] = useState(comment.score);
+
+  
 
   const handleUnVote = (e) => {
     e.preventDefault();
@@ -35,6 +32,10 @@ const Comment = ({
     e.preventDefault();
     setCommentScore(commentScore + 1);
   };
+
+  const handleChange = (comment) => {
+    console.log(comment);
+}
   return (
     <>
       <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
@@ -44,12 +45,12 @@ const Comment = ({
           } flex flex-row justify-between items-center mb-2 lg:ml-[50px]`}
         >
           <img
-            src={profilePic}
+            src={comment?.user?.image?.webp}
             alt="profile_user_image"
             className="w-10 h-auto"
           />
           <a href="#" className="font-bold">
-            {userName}
+            {comment?.user?.username}
           </a>
           <span
             className={`bg-Moderate-blue py-[2px] px-[6px] text-[14px] font-bold text-white rounded ${
@@ -58,9 +59,9 @@ const Comment = ({
           >
             you
           </span>
-          <span className="txt-Grayish-Blue">{createdAt}</span>
+          <span className="txt-Grayish-Blue">{comment.createdAt}</span>
         </div>
-        <p className="my-2 txt-Grayish-Blue lg:ml-[50px]">{content}</p>
+        <p className="my-2 txt-Grayish-Blue lg:ml-[50px]">{comment.content}</p>
         <div className="bg-Very-light-gray p-[5px] w-[30%] txt-Moderate-blue font-bold flex flex-row justify-between rounded-[8px] text-[18px] lg:flex-col lg:w-[40px] lg:absolute lg:justify-center">
           <button
             className="w-1/4 lg:text-center lg:w-full"
@@ -75,6 +76,7 @@ const Comment = ({
             value={commentScore}
             className="w-1/4 bg-transparent lg:text-center lg:w-full outline-none"
             readOnly
+            onChange={() => {handleChange(comment)}}
           />
           <button
             className="w-1/4 lg:text-center lg:w-full"
@@ -103,8 +105,8 @@ const Comment = ({
           )}
         </div>
       </div>
-      {replies?.length > 0 && (
-        <Replies replies={replies} currentUser={currentUser} />
+      {comment?.replies?.length > 0 && (
+        <Replies replies={comment.replies} currentUser={currentUser} />
       )}
     </>
   );

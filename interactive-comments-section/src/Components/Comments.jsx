@@ -8,13 +8,8 @@ const Comments = ({ currentUser, usersComments, openModal }) => {
       {usersComments.map((item, index) => (
         <Comment
           key={`comment_${index}`}
-          content={item.content}
-          profilePic={item.user?.image?.webp}
-          userName = {item.user?.username}
-          createdAt = {item.createdAt}
-          replies = {item?.replies}
-          currentUser = {currentUser}
-          score = {item.score}
+          comment={item}
+          currentUser={currentUser}
           openModal = {openModal}
           id = {item.id}
         />
