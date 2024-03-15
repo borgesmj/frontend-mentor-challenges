@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root{
     /* Colores primarios */
-    --Moderate-blue: hsl(238, 40%, 52%);
-    --Soft-Red: hsl(358, 79%, 66%);
-    --Light-grayish-blue: hsl(239, 57%, 85%);
-    --Pale-red: hsl(357, 100%, 86%);
-    /* Colores Neutros */
-    --Dark-blue: hsl(212, 24%, 26%);
-    --Grayish-Blue: hsl(211, 10%, 45%);
-    --Light-gray: hsl(223, 19%, 93%);
-    --Very-light-gray: hsl(228, 33%, 97%);
-    --White: hsl(0, 0%, 100%);
+    --Moderate-blue: 	#5457b6;
+    --Soft-Red: #ed6468;
+    --Light-grayish-blue: #c3c4ef;
+    --Pale-red: ;
+    /* Colores Neutr	#ffb8bbos */
+    --Dark-blue: #324152;
+    --Grayish-Blue: #67727e;
+    --Light-gray: #eaecf1;
+    --Very-light-gray: #f5f6fa;
+    --White: #ffffff;
 }
 
 body{
