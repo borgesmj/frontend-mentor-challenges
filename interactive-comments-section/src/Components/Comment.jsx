@@ -13,8 +13,6 @@ const Comment = ({
 
   const [commentScore, setCommentScore] = useState(comment.score);
 
-  
-
   const handleUnVote = (e) => {
     e.preventDefault();
     if (commentScore === 0) {
@@ -32,10 +30,6 @@ const Comment = ({
     e.preventDefault();
     setCommentScore(commentScore + 1);
   };
-
-  const handleChange = (comment) => {
-    console.log(comment);
-}
   return (
     <>
       <div className="bg-color-white p-4 rounded-[10px] flex flex-col my-4 relative">
@@ -76,7 +70,6 @@ const Comment = ({
             value={commentScore}
             className="w-1/4 bg-transparent lg:text-center lg:w-full outline-none"
             readOnly
-            onChange={() => {handleChange(comment)}}
           />
           <button
             className="w-1/4 lg:text-center lg:w-full"
